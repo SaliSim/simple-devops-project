@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1aplha1
+kind: Application
+metadata:
+  name: simple-devops-project
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "git@github.com:SaliSim/simple-devops-project.git"
+    targetRevision: HEAD
+    path: /home/oogway/terraform-configs/simple-devops-project-time-printer
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

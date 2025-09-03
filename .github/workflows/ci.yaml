@@ -19,3 +19,15 @@
                   run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
                 - name: Push Docker image to DockerHub
                   run: docker push salisimiyu/simple-devops-project:${{ env.SHORT_SHA }}
+                -name: Configure Git Author
+                  run:
+                    git config --local user.email "salisimiyu319@gmail.com"
+                    git config --local user.name "salisim"
+                -name: update Helm chart with new image tag
+                  run:
+                    sed -i "s/tag: .*/tag: ${SHORT_SHA}/" simple-devops-project-time-printer/values.yaml
+                    git add ./simple-devops-project-time-printer/values.yaml
+                    git commit -m "Update image tag to ${SHORT_SHA}"
+                    git push
+                
+                
