@@ -1,6 +1,6 @@
 image:
   repository: salisimiyu/simple-devops-project
-  tag: 65fa8be
+  tag: dbfe2fa
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
