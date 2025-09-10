@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/SaliSim/simple-devops-project.git"
     targetRevision: HEAD
-    path: simple-devops-project-time-printer
+    path: terraform-configs/simple-devops-project-time-printer
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
