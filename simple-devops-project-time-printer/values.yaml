@@ -1,6 +1,6 @@
 image:
   repository: salisimiyu/simple-devops-project
-  tag: ecad50a
+  tag: 8048e4a
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
