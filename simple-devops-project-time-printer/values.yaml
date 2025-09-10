@@ -1,6 +1,6 @@
 image:
   repository: salisimiyu/simple-devops-project
-  tag: 54e4c7c
+  tag: e7dae8b
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
