@@ -10,7 +10,7 @@ terraform{
 resource "minikube_cluster" "minikube_docker" {
   driver       = "docker"
   cluster_name = "devops-project"
-  kubernetes_version = "v1.27.4"  # Use a valid version
+  kubernetes_version = "v1.37.0"  # Use a valid version
 
   addons = [
     "default-storageclass",
